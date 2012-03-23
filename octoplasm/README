@@ -1,1 +1,132 @@
 Simple, the octoplasm uses tentacles to fetch pebbles from the pebble beds.
+
+octoplasm - (shell input compressor)
+  will determine the best possible usage for any given
+  command along with it's parameters based on usage
+  information collected by the salsa behaviour profiler.
+  The usage information contain statistics that when analyzed
+  can be used to dynamically create configurations based
+  on the consumer application from which octoplasm can deduce
+  the most recent, best fit command to execute.
+  parameters along with a label matching the command are used
+  to identify which command to execute. the history and weight
+  determined by the profiler will eventually change a specific
+  instruction with full set of parameters into a simpler tagged
+  form of instruction. 
+
+  e.g.
+  tail -f /var/log/apache/access.log | grep '2012'
+	could become
+  op l apache 2012
+
+pebbles - (self maintaining, learning capable scripts)
+  these are what octoplasm will use to group together
+  the most common forms of commands into a type heirarchy
+  or ontology. the logstreamer.sh pebble is semantically
+  named as a parent group for programs that can be used
+  to search logs e.g. tail, grep, zgrep
+  
+  the octoplasm example above makes use of the logstreamer.sh
+  pebble in the following manner:
+  
+   - op links to one of the tentacles, cmd.sh, ssh.sh
+   - l matches logstreamer.sh semantically
+   - apache and 2012 are parameters to the logstreamer.sh command
+
+  logstreamer.sh takes from the config options such as which command
+  to use for the search, tail, grep, zgrep. file types are also
+  used to identify which programs/commands to exeute as children
+  of the parent category in the ontology.
+
+tentacles - (interfacing workers)
+  these facilitate what needs to be done in order to execute
+  the commands in a cloud, where the cloud is any method used
+  to expose the pebble.
+
+  will contain files like:
+    - cmd.sh local script execution
+    - ssh.sh remote script execution via ssh
+    - http.sh remote script exposed via web server
+    - xmlrpc.sh remote pebble exposed via xmlrpc
+    - soap.sh remote script vi wsdl method
+    - xmpp.sh remote vi xmpp issued commands
+
+beds - (pebble groupings)
+  will form the parent category for pebbles
+  e.g,
+    - all security related pebbles will be grouped under inkbed
+    - log type pebbles under logbed
+  it's important to note that the grouping spans pebbles like
+  tags/labels and an analyzer migh belong to the logbed or analysisbed
+
+salsa - (behavoral analyzer)
+  every program is seen by salsa as a user or entity with sets of attributes
+  worth learning from. think of the salsa program/service as the student of
+  a dance lesson where the "instructor" attempts to teach salsa about it's
+  particular style of dance i.e dance behaviour
+
+  salsa will be a background process that checks all configured "insructors"
+  or program entities and their associated watch points to learn from them
+  what it needs in order to shape configurations for octoplasm.
+
+  e.g.
+    - apache as a profile will have it's apache/access.log and error.log watched
+      and salsa will watch and analyze this to determin behavior.
+
+    - a firefox entity profile might contain apache as a child entity
+      on a developer install.
+
+    - a user profile for the current developer might contain shell and
+      firefox points to watch and determine behavior
+ 
+  octoplasm will inturn check for the agent or instructor identifier to
+  execute compressed commands against it for each.
+
+  salsa will also be able to trigger focused contextual alerts based
+  on behavior analysis
+
+hubot - (customizable lifetime embetterment bot)
+  a developer helper chat session might look like the following:
+    you action : (browse firefox, open your symfony application and you
+         encounter a symfony error like, missinf sqlite extention)
+ 
+      < salsa picks up on this in the apache error log
+        and sends a message via octoplasm to codi >
+
+    codi: it appears you have a symfony error
+
+      < codi then queries octoplasm's webcrawler pebble and finds
+        known solutions to this problem and presents a list of
+        possible fixes. >
+
+    codi: I have the following solutions
+          - <a href=...> symfony framework forum
+            content: install php5-sqlite
+          - [HttpKernel] [FrameworkBundle] Memcache(d) Profiler Storage added
+            stof added a note to src/Symfony/Component/HttpKernel/Profiler
+          
+          would you like me to attempt to correct this?
+
+      < codi queries octoplasm's install pebble and uses information
+        collected by salsa pertaining to your environment
+        to determine best install route
+        
+        e.g. sudo apt-get install php5-sqlite 
+             based on os sig, os id command for ubuntu
+
+        if this fails it takes a debug snapshot and submits
+        this to a central knowledge base for storing problems
+        and solutions in a specified format. (fix once never again kb server)
+
+        eventually this knowledge base will grow to a terminal velocity
+        to keep up with fixes to any known problem for codi to
+        be able to find the right solution.
+       >
+
+    codi: The problem has been fixed, try a refresh of http://localhost/symfony
+ 
+    you: thanks codi guy
+ 
+    codi: no probs programmer dude man what can't fix his own apps ;)
+
+  The humanized speech component obviously lending to AIML proflie
