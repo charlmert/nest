@@ -1,0 +1,7 @@
+The aim of a pebble script should be to find the lowest common
+denominators involved in daily linux command usage into a script
+pebble with the most used arguments
+
+Pebble scripts are housed in beds/servers.
+
+The default pebbles for the different types of beds can be found in ../beds/*

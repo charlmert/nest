@@ -1,0 +1,14 @@
+## cmd tentacle
+# make tentacle search for a pebble like "log",
+# ask it to check apache log files for entries containing Firefox
+./cmd.sh log "apache Firefox"
+
+## ssh tentacle
+
+# make tentacle connect to charl@localhost, search for a pebble like "log", 
+# run it with "apache load" as the parameters
+./ssh.sh charl@localhost log "apache load"
+
+# make tentacle connect to charl@localhost, search for the "log" pebble
+# ask the log pebble to check apache for Firefox entries
+./ssh.sh charl@localhost log "apache ' -i Firefox'"
