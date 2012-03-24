@@ -7,7 +7,7 @@
 # determine config base_path
 # TODO: make these utils available from ENV var
 function find_base_path() {
-BASE_DIR=`(cd $(dirname $0) && pwd)`
+BASE_DIR=`(cd $(dirname ${BASH_SOURCE[0]}) && pwd)`
 
 PATH_ARR=( `echo $BASE_DIR | sed s#^.##g | awk 'BEGIN{FS="/"}{for (i=1; i<=NF; i++) print $i}'` )
 PATH_LIMIT=${#PATH_ARR[@]}
@@ -21,35 +21,46 @@ done
 echo $RES_PATH
 }
 
+function main() {
 # script self aware relative
-BASE_PATH_TMP=$BASE_PATH
-BASE_PATH=`find_base_path 1`
+local BASE_PATH=`find_base_path 1`
 
 source $BASE_PATH/config/config.sh
 
 LABEL=${1:-"shiny"}
 
 #TODO: include param struct matcher
+PEBBLE_FILES=$(find $PEBBLES_DIR | awk 'BEGIN{FS="/"}{for (i=NF; i<=NF; i++) print $i}' | grep $LABEL | grep -E 'sh$')
+PEBBLE_FILE=$PEBBLE_FILES
 
-PEBBLE_FILES=`find $PEBBLES_DIR | awk 'BEGIN{FS="/"}{for (i=NF; i<=NF; i++) print $i}' | grep $LABEL | grep -E 'sh$'`
-echo $PEBBLE_FILES
-exit 0
-for PEBBLE_FILE in $PEBBLE_FILES; do
-	FILE_TYPE=`file $PEBBLE_FILE | awk '{print $2}'`
+#for PEBBLE_FILE in $PEBBLE_FILES; do
+
+	#if [ ! -r "$PEBBLE_FILE" ]; then
+		#continue
+	#fi
+
+	PEBBLE_SCRIPT=$PEBBLES_DIR/$PEBBLE_FILE
+	FILE_TYPE=`file $PEBBLE_SCRIPT | awk '{print $2}'`
 
 	case "$FILE_TYPE" in
-		"POSIX")
-			SCRIPT_FILE=$PEBBLE_FILE
+		"POSIX" | "Bourne-Again")
+			echo $PEBBLE_SCRIPT
+			exit 0
 		;;
 		"symbolic")
-			SCRIPT_FILE=$PEBBLE_FILE
+			# TODO: enable linked pebbles
+			# for now pebbles must live in octoplasm/pebbles/
+			echo $PEBBLE_SCRIPT
+			exit 0
 		;;
 		*)
 			#Should we log unsearchable file types?
+			echo "pebble request, $LABEL"
 		;;
 	esac
-done
+#done
 
 echo $SCRIPT_FILE
+}
 
-BASE_PATH=$BASE_PATH_TMP
+main $@

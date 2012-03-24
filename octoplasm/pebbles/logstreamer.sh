@@ -1,10 +1,24 @@
 #!/bin/bash
 SCRIPT_SIG=`md5sum $0`
 
-# determine config base_path
 # TODO: make these utils available from ENV var
+# resolves symbolic links
+function resolve_link() {
+  local LINK_FILE=${1:-${BASH_SOURCE[0]}}
+  local FILE_TYPE=`file $LINK_FILE | awk '{print $2}'`
+  local LINK_TO=$LINK_FILE
+
+  while [ $FILE_TYPE = "symbolic" ]; do
+    LINK_TO=$(readlink $LINK_TO)
+    FILE_TYPE=$(file $LINK_TO | awk '{print $2}')
+  done
+
+  echo $LINK_TO
+}
+
+# determine config base_path
 function find_base_path() {
-BASE_DIR=`(cd $(dirname $0) && pwd)`
+BASE_DIR=`(cd $(dirname $(resolve_link ${BASH_SOURCE[0]})) && pwd)`
 
 PATH_ARR=( `echo $BASE_DIR | sed s#^.##g | awk 'BEGIN{FS="/"}{for (i=1; i<=NF; i++) print $i}'` )
 PATH_LIMIT=${#PATH_ARR[@]}
@@ -18,11 +32,11 @@ done
 echo $RES_PATH
 }
 
+function main() {
 # script self aware relative
-BASE_PATH_TMP=$BASE_PATH
-BASE_PATH=`find_base_path 1`
+local BASE_PATH=`find_base_path 1`
 
-PEBBLES_DIR=$BASE_PATH/pebbles
+source $BASE_PATH/config/config.sh
 
 #
 # Package:		Octoplasm/Pebbles
@@ -84,12 +98,18 @@ SHINY_FILES=$TEXT_FILES
 #exit 1
 
 LOG_LOCATIONS=( `echo $LOGSTREAMER_LOG_PATH | awk 'BEGIN{FS=":"}{for (i=1; i<=NF; i++) print $i}'` )
-LOG_COUNT=${#PATH_ARR[@]}
+LOG_COUNT=${#LOG_LOCATIONS[@]}
 
 for i in `seq 0 $LOG_COUNT`; do
-  LOG_PATH=${PATH_ARR[$i]}
+  LOG_PATH=${LOG_LOCATIONS[$i]}
 
-	LOG_FILES=`find $LOG_PATH | grep $LABEL`
+	if [ ! -d "$LOG_PATH" ]; then
+	  continue
+  fi
+
+	#LOG_FILES=`find $LOG_PATH | grep $LABEL`
+	# opt: supress errors
+	LOG_FILES=`find $LOG_PATH 2>/dev/null | grep $LABEL`
 	for LOG_FILE in $LOG_FILES; do
 		# using file to determine and check against file type
 		# the file command should also be subject to the behavior analyzer
@@ -119,7 +139,7 @@ done
 
 if [ ! -z "$SHINY_FILES" ]; then
 	if [ $SHINY_PROFILE_PARAMS = 2 ]; then
-		#grep type parameter requirements
+		#pebble node type parameter requirements
 		$SHINY_BIN $SHINY_OPT $SEARCH_CMD $SHINY_FILES
 	else
 		$SHINY_BIN $SHINY_OPT $SHINY_FILES
@@ -127,5 +147,6 @@ if [ ! -z "$SHINY_FILES" ]; then
 fi
 
 #TODO: add log file locations
+}
 
-BASE_PATH=$BASE_PATH_TMP
+main $@
