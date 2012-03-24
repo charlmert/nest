@@ -1,4 +1,28 @@
-#!/bin/sh
+#!/bin/bash
+SCRIPT_SIG=`md5sum $0`
+
+# determine config base_path
+# TODO: make these utils available from ENV var
+function find_base_path() {
+BASE_DIR=`(cd $(dirname $0) && pwd)`
+
+PATH_ARR=( `echo $BASE_DIR | sed s#^.##g | awk 'BEGIN{FS="/"}{for (i=1; i<=NF; i++) print $i}'` )
+PATH_LIMIT=${#PATH_ARR[@]}
+((PATH_LIMIT=PATH_LIMIT - (($1+1))))
+RES_PATH=""
+
+for i in `seq 0 $PATH_LIMIT`; do
+    RES_PATH=$RES_PATH`echo /${PATH_ARR[$i]} | tr -d "\n"`
+done
+
+echo $RES_PATH
+}
+
+# script self aware relative
+BASE_PATH_TMP=$BASE_PATH
+BASE_PATH=`find_base_path 1`
+
+PEBBLES_DIR=$BASE_PATH/pebbles
 
 #
 # Package:		Octoplasm/Pebbles
@@ -59,30 +83,38 @@ SHINY_FILES=$TEXT_FILES
 #echo $LOG_FILE
 #exit 1
 
-LOG_FILES=`find /var/log | grep $LABEL`
-for LOG_FILE in $LOG_FILES; do
-	# using file to determine and check against file type
-  # the file command should also be subject to the behavior analyzer
+LOG_LOCATIONS=( `echo $LOGSTREAMER_LOG_PATH | awk 'BEGIN{FS=":"}{for (i=1; i<=NF; i++) print $i}'` )
+LOG_COUNT=${#PATH_ARR[@]}
 
-	# the homeostasis of the application should be measurable to ensure
-  # it will function to a certain acceptable degree.
+for i in `seq 0 $LOG_COUNT`; do
+  LOG_PATH=${PATH_ARR[$i]}
 
-	# if the analyzer determines that the file command no longer best fits
-  # for this purpose it will use the new command and ensure it's inputs
-  # and outputs maintains above an expected percentage.
-	FILE_TYPE=`file $LOG_FILE | awk '{print $2}'`
+	LOG_FILES=`find $LOG_PATH | grep $LABEL`
+	for LOG_FILE in $LOG_FILES; do
+		# using file to determine and check against file type
+		# the file command should also be subject to the behavior analyzer
 
-	# every distinct filetype should have a matching category tree that
-  # eventually points to the best command that makes use of these types
-  # of files/data sources.
-	case "$FILE_TYPE" in
-		"$SHINY_PROFILE_TYPE")
-			SHINY_FILES="$SHINY_FILES $LOG_FILE"
-		;;
-		*)
-			#Should we log unsearchable file types?
-		;;
-	esac
+		# the homeostasis of the application should be measurable to ensure
+		# it will function to a certain acceptable degree.
+
+		# if the analyzer determines that the file command no longer best fits
+		# for this purpose it will use the new command and ensure it's inputs
+		# and outputs maintains above an expected percentage.
+		FILE_TYPE=`file $LOG_FILE | awk '{print $2}'`
+
+		# every distinct filetype should have a matching category tree that
+		# eventually points to the best command that makes use of these types
+		# of files/data sources.
+		case "$FILE_TYPE" in
+			"$SHINY_PROFILE_TYPE")
+				SHINY_FILES="$SHINY_FILES $LOG_FILE"
+			;;
+			*)
+				#Should we log unsearchable file types?
+			;;
+		esac
+	done
+
 done
 
 if [ ! -z "$SHINY_FILES" ]; then
@@ -95,3 +127,5 @@ if [ ! -z "$SHINY_FILES" ]; then
 fi
 
 #TODO: add log file locations
+
+BASE_PATH=$BASE_PATH_TMP
