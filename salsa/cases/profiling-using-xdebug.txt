@@ -86,7 +86,10 @@ research> Configuring xdebug profiler output as a watch point for PHP as an inst
 
 research> a Good candidate watch point for configuring xdebug or any open source program as an instructor
           would be it's issue tracker: http://bugs.xdebug.org/view_all_bug_page.php
-          
+
           e.g. xdebug.profiler_aggregate is undocumented and could be obtained here.
           there needs to be a formal workflow set up to ensure the best practice or most
           production scale usage is implemented.
+
+research> another watchpoint for php would be phpinfo(), info about extentions loaded, options to them
+          version info etc. realtime depending on cli or apache.
