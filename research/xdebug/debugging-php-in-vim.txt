@@ -1,0 +1,18 @@
+Download:
+http://www.vim.org/scripts/script.php?script_id=1929
+
+readme:
+http://developers.blog.box.com/2007/06/20/how-to-debug-php-with-vim-and-xdebug-on-linux/
+
+config xdebug:
+xdebug.remote_enable = 1 
+xdebug.remote_port = 9000 
+xdebug.remote_host = localhost
+
+cp -fr plugin ~/.vim/
+
+start debugging session:
+http://example.com/admin/feature?XDEBUG_SESSION_START=1
+
+open the php file and press F5
+waiting for a new connection on port 9000 for 5 seconds...
