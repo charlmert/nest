@@ -5,3 +5,9 @@ pebble with the most used arguments
 Pebble scripts are housed in beds/servers.
 
 The default pebbles for the different types of beds can be found in ../beds/*
+
+[Apache Lucene Indexer]
+The more pebbles the more the need for indexing and appropriate label to pebble relations
+need to be analyzed and added based on as many statistics/metrics as possible.
+
+Brings forth the idea of label wars
