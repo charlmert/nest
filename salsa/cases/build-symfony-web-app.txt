@@ -1,0 +1,244 @@
+1. download symfony into a directory of your choice:
+INIT:
+charl@mig25:/home/charl/work/Symfony_Standard_Vendors_2.0.11.tgz
+
+research> already symantics could be captured and tokens could be tagged to
+          enable this to be listed in subsequent seaches (Apache Lucene Indexer)
+
+research> the directory needs to be captured on or before an unzip (tagged via system corpus tagger to be such)
+				  bash history stores commands serially so working directory could be captured by traversing this
+          OR another option would be to (oop sense) store or morph the .bash_history into a .yml file with
+          grouped command sets and environment snapshot.
+
+COMMAND:
+charl@mig25:~/tar -xzvf Symfony_Standard_Vendors_2.0.11.tgz
+
+------------------------------------------------------------------------------------------------------
+OUTPUT:
+Symfony/
+Symfony/app/
+Symfony/bin/
+Symfony/deps
+Symfony/deps.lock
+Symfony/LICENSE
+Symfony/README.md
+Symfony/src/
+Symfony/vendor/
+Symfony/web/
+Symfony/web/.htaccess
+...
+
+research> the output could be captured silently as to be unobtrusive and the output could again be
+          further analyzed, md5sum'd to ensure consistency or validation across systems.
+
+					This referes specifically to when another user implements this usecase from the globally
+					available "do once, never again" server (this server will have a leg that searches blogs for
+          solutions).
+
+charl@mig25:~/cd Symfony
+
+research> the user reads up and consumes enough documentation to get Symfony up and running but the user
+          effectively goes through this "once and no one will have to ever again". This is subject to knowledge
+          base having record of the particular environment snapshot along with corpus matching command set.
+
+charl@mig25:~/cd app/ 
+charl@mig25:~/./console generate:bundle
+
+research> must have a mechanism for capturing readline surveys (symfony console prompts for project specific parameters)
+					AND the appropriate full command line version, if available, should be recorded.
+
+OUTPUT: (readline captured)
+-------------------------------------------------------------------------------------------------------------
+                                            
+  Welcome to the Symfony2 bundle generator  
+
+Your application code must be written in bundles. This command helps
+you generate them easily.
+
+Each bundle is hosted under a namespace (like Acme/Bundle/BlogBundle).
+The namespace should begin with a "vendor" name like your company name, your
+project name, or your client name, followed by one or more optional category
+sub-namespaces, and it should end with the bundle name itself
+(which must have Bundle as a suffix).
+
+See http://symfony.com/doc/current/cookbook/bundles/best_practices.html#index-1 for more
+details on bundle naming conventions.
+
+Use / instead of \ for the namespace delimiter to avoid any problem.
+
+Bundle namespace: Localbands  
+ The namespace must end with Bundle. 
+Bundle namespace: LocalBundle
+ The namespace must contain a vendor namespace (e.g. "VendorName\LocalBundle" instead of simply "LocalBundle").
+
+If you've specified a vendor namespace, did you forget to surround it with quotes (init:bundle "Acme\BlogBundle")? 
+Bundle namespace: Localbands\LocalBundle
+
+In your code, a bundle is often referenced by its name. It can be the
+concatenation of all namespace parts but it's really up to you to come
+up with a unique name (a good practice is to start with the vendor name).
+Based on the namespace, we suggest LocalbandsLocalBundle.
+
+Bundle name [LocalbandsLocalBundle]: Home
+ The bundle name must end with Bundle. 
+Bundle name [LocalbandsLocalBundle]: HomeBunlde
+ The bundle name must end with Bundle. 
+Bundle name [LocalbandsLocalBundle]: HomeBundle
+
+The bundle can be generated anywhere. The suggested default directory uses
+the standard conventions.
+
+Target directory [/media/cloud/home/work/Symfony/src]: 
+
+Determine the format to use for the generated configuration.
+
+Configuration format (yml, xml, php, or annotation) [annotation]: yml
+
+To help you getting started faster, the command can generate some
+code snippets for you.
+
+Do you want to generate the whole directory structure [no]? yes
+
+                             
+  Summary before generation  
+                             
+
+You are going to generate a "Localbands\LocalBundle\HomeBundle" bundle
+in "/media/cloud/home/work/Symfony/src/" using the "yml" format.
+
+Do you confirm generation [yes]? yes
+
+                     
+  Bundle generation  
+                     
+
+Generating the bundle code: OK
+Checking that the bundle is autoloaded: OK
+Confirm automatic update of your Kernel [yes]? yes   
+Enabling the bundle inside the Kernel: OK
+Confirm automatic update of the Routing [yes]? yes
+Importing the bundle routing resource: OK
+
+                                               
+  You can now start using the generated code!  
+__________________________________________________________________________________________________                                               
+
+research> The morph from readline to command line must be intelligent enough to distinguish
+				  between erroneous input
+e.g.
+Bundle namespace: Localbands
+ The namespace must end with Bundle.
+...
+Bundle namespace: Localbands\LocalBundle
+
+RESULT PARAMETER: Bundle namespace: Localbands\LocalBundle
+
+research> To obtain command usage for a specific sub command set for symfony use "./console -h sub_command:set"
+charl@mig25:~/./console -h generate:bundle
+
+OUTPUT:
+--------------------------------------------------------------------------------------------------------------------
+Usage:
+ generate:bundle [--namespace="..."] [--dir="..."] [--bundle-name="..."] [--format="..."] [--structure]
+
+Options:
+ --namespace    The namespace of the bundle to create
+ --dir          The directory where to create the bundle
+ --bundle-name  The optional bundle name
+ --format       Use the format for configuration files (php, xml, yml, or annotation) (default: annotation)
+ --structure    Whether to generate the whole directory structure
+
+Help:
+ The generate:bundle command helps you generates new bundles.
+ 
+ By default, the command interacts with the developer to tweak the generation.
+ Any passed option will be used as a default value for the interaction
+ (--namespace is the only one needed if you follow the
+ conventions):
+ 
+ php app/console generate:bundle --namespace=Acme/BlogBundle
+ 
+ Note that you can use / instead of \ for the namespace delimiter to avoid any
+ problem.
+ 
+ If you want to disable any user interaction, use --no-interaction but don't forget to pass all needed options:
+ 
+ php app/console generate:bundle --namespace=Acme/BlogBundle --dir=src [--bundle-name=...] --no-interaction
+ 
+ Note that the bundle namespace must end with "Bundle".
+________________________________________________________________________________________________________________
+
+research>	This could be used to determine command parameter usage that match the labels from the previous
+          readline session. Semantic mining (Thesis topic). The result command specifically parameter assignment
+          stems from a list of well known assignment operators i.e. "=".
+
+					[Semantic Data Mining]
+					The output must be statistically analyzed and matched to expected output which in this case would be
+          not to see the Usage screen. This would be an indication that the project wasn't built successfully.
+	
+					Semantic data harvesting utilizes the effort put into naming parameters and commands and variables
+          such that these could be used to form meaningful relations to other dependant structures.
+
+					e.g. any positive or success tone in a programs output would be used to calculate the weight of the
+          input using something like NLTK to facilitate this.
+					
+					In this specific case it would be as simple as checking the output for "You can now start using the generated code!"
+					as the determining factor that the network generated the expected result. If not repeat, rinse and backwards
+          propogate until is expected logging and re-analyzing where needed.
+		
+RESULT COMMAND: 
+./console --namespace="Localbands" --bundle-name="Localbands\LocalBundle" --dir="/home/charl/work/Symfony/src" --format="yml" --structure="yes" 
+
+OUTPUT ANALYSIS:
+Negative tone detected in output, 
+REASON: Usage screen displayed
+
+RESULT COMMAND:
+./console --namespace "Localbands" --bundle-name "Localbands\LocalBundle" --dir "/home/charl/work/Symfony/src" --format "yml" --structure "yes"
+Negative tone detected
+REASON:
+[InvalidArgumentException]            
+  Command "Localbands" is not defined.
+
+NOTE: With human error I missed that the Usage instruction that pointed the actual assignment specification out.
+      generate:bundle [--namespace="..."] [--dir="..."] [--bundle-name="..."] [--format="..."] [--structure]
+     
+      salsa would pick up on this instantly and thus the resulting command would have been the following from the start.
+
+RESULT COMMAND:
+generate:bundle [--namespace="..."] [--dir="..."] [--bundle-name="..."] [--format="..."] [--structure]
+
+./console generate:bundle --namespace="Localbands\LocalBundle" --dir="/home/charl/work/Symfony/src" --format="yml" --structure="yes" --no-interaction
+
+EXPECTED OUTPUT:
+--------------------------------------------------------------------------------------------------------------------                     
+  Bundle generation  
+                     
+
+Generating the bundle code: OK
+Checking that the bundle is autoloaded: OK
+Enabling the bundle inside the Kernel: OK
+Importing the bundle routing resource: OK
+
+                                               
+  You can now start using the generated code!  
+____________________________________________________________________________________________________________________                                               
+
+
+research> any unobtainable resolve should result in a systematic bug/issue log and sent out to the respective developers
+          as part of a configurable workflow.
+  
+          <Workflow>
+						... Container error="command with parameters didn't couldn't compile with any parameters or combination of parameters and calls."
+						<EmailDevelopers>
+  						<Email>
+								charl.mert@gmail.com
+							</Email>
+							<Email>
+								charlm@miranetworks.net
+							</Email>
+							<Email>
+								dude@symfony.com
+							</Email>
+						</EmailDevelopers>
+          </Workflow>
