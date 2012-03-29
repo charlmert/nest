@@ -1,0 +1,52 @@
+BASH BUILTIN COMMANDS:
+
+       ulimit [-HSTabcdefilmnpqrstuvx [limit]]
+              Provides control over the resources available to the shell and to processes started by it, on systems that allow  such  control.   The  -H  and  -S
+              options  specify  that the hard or soft limit is set for the given resource.  A hard limit cannot be increased by a non-root user once it is set; a
+              soft limit may be increased up to the value of the hard limit.  If neither -H nor -S is specified, both the soft and  hard  limits  are  set.   The
+              value  of  limit  can be a number in the unit specified for the resource or one of the special values hard, soft, or unlimited, which stand for the
+              current hard limit, the current soft limit, and no limit, respectively.  If limit is omitted, the current value of the soft limit of  the  resource
+              is  printed, unless the -H option is given.  When more than one resource is specified, the limit name and unit are printed before the value.  Other
+              options are interpreted as follows:
+              -a     All current limits are reported
+              -b     The maximum socket buffer size
+              -c     The maximum size of core files created
+              -d     The maximum size of a process's data segment
+              -e     The maximum scheduling priority ("nice")
+              -f     The maximum size of files written by the shell and its children
+              -i     The maximum number of pending signals
+              -l     The maximum size that may be locked into memory
+              -m     The maximum resident set size (many systems do not honor this limit)
+              -n     The maximum number of open file descriptors (most systems do not allow this value to be set)
+              -p     The pipe size in 512-byte blocks (this may not be set)
+              -q     The maximum number of bytes in POSIX message queues
+              -r     The maximum real-time scheduling priority
+              -s     The maximum stack size
+              -t     The maximum amount of cpu time in seconds
+              -u     The maximum number of processes available to a single user
+              -v     The maximum amount of virtual memory available to the shell and, on some systems, to its children
+              -x     The maximum number of file locks
+              -T     The maximum number of threads
+
+              If limit is given, it is the new value of the specified resource (the -a option is display only).  If no option is given, then -f is assumed.  Val‐
+              ues  are  in  1024-byte increments, except for -t, which is in seconds, -p, which is in units of 512-byte blocks, and -T, -b, -n, and -u, which are
+              unscaled values.  The return status is 0 unless an invalid option or argument is supplied, or an error occurs while setting a new limit.
+
+
+charl@mig25:/ulimit -a
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 20
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 16382
+max locked memory       (kbytes, -l) 64
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) unlimited
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited

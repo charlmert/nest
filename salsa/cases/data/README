@@ -1,0 +1,50 @@
+salsa case - teaching salsa to use diff
+
+reseach> the assumption is made that salsa is already aware of
+         configuration profiles, environment, diff options
+		
+				 the concept of what makes text different doesn't have
+         to be known, only the expected output.
+
+				 in this case would be everything in ... to be continued
+
+charl@mig25:/media/cloud/home/open/nest/salsa/cases/data$ ls
+diff_latest_output.sh  test1.txt  test2.txt
+charl@mig25:/media/cloud/home/open/nest/salsa/cases/data$ ./diff_latest_output.sh 
+4a5
+> e
+charl@mig25:/media/cloud/home/open/nest/salsa/cases/data$ ./diff_latest_output.sh -up
+--- test1.txt	2012-03-28 19:03:42.276376808 +0200
++++ test2.txt	2012-03-28 19:03:58.484376727 +0200
+@@ -2,3 +2,4 @@ a
+ b
+ c
+ d
++e
+charl@mig25:/media/cloud/home/open/nest/salsa/cases/data$ ./diff_latest_output.sh
+4a5
+> e
+charl@mig25:/media/cloud/home/open/nest/salsa/cases/data$ ./diff_latest_output.sh -up
+--- test1.txt	2012-03-28 19:03:42.276376808 +0200
++++ test2.txt	2012-03-28 19:03:58.484376727 +0200
+@@ -2,3 +2,4 @@ a
+ b
+ c
+ d
++e
+charl@mig25:/media/cloud/home/open/nest/salsa/cases/data$ ./diff_latest_output.sh -c
+*** test1.txt	2012-03-28 19:03:42.276376808 +0200
+--- test2.txt	2012-03-28 19:03:58.484376727 +0200
+***************
+*** 2,4 ****
+--- 2,5 ----
+  b
+  c
+  d
++ e
+charl@mig25:/media/cloud/home/open/nest/salsa/cases/data$ ./diff_latest_output.sh -c | grep '+'
+*** test1.txt	2012-03-28 19:03:42.276376808 +0200
+--- test2.txt	2012-03-28 19:03:58.484376727 +0200
++ e
+charl@mig25:/media/cloud/home/open/nest/salsa/cases/data$ ./diff_latest_output.sh -c | grep '+ '
++ e
