@@ -41,7 +41,7 @@ PEBBLES_DIR=$BASE_PATH/pebbles
 #source $BASE_DIR/config/build_pebbles_config.sh
 
 # logstreamer pebble config
-LOGSTREAMER_LOG_PATH="/var/log:/home/charl/work/localbands/app/logs"
+LOGSTREAMER_LOG_PATH="/var/log:/home/charl/work/localbands/app/logs:/tmp"
 
 # updating shiny pebbles should be re linked to the to the latest/best_fit_algo pebble
 # when salsa finishes it's analysis run
