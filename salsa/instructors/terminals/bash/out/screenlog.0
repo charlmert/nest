@@ -1,0 +1,142 @@
+charl@mig25:/media/cloud/home/open/nest/salsa/instructors/terminals/bash/out$ ls
+screenlog.0
+charl@mig25:/media/cloud/home/open/nest/salsa/instructors/terminals/bash/out$ clear
+[H[Jcharl@mig25:/media/cloud/home/open/nest/salsa/instructors/terminals/bash/out$ cd ..
+charl@mig25:/media/cloud/home/open/nest/salsa/instructors/terminals/bash$ ls
+bin  out
+charl@mig25:/media/cloud/home/open/nest/salsa/instructors/terminals/bash$ cd ..
+charl@mig25:/media/cloud/home/open/nest/salsa/instructors/terminals$ ls
+bash
+charl@mig25:/media/cloud/home/open/nest/salsa/instructors/terminals$ op l 
+/usr/bin/op: line 83: pebble: command not found
+charl@mig25:/media/cloud/home/open/nest/salsa/instructors/terminals$ op lo localbands
+==> /var/log/apache2/access_localbands.log <==
+127.0.0.1 - - [24/Mar/2012:19:03:31 +0200] "GET / HTTP/1.1" 403 503 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [24/Mar/2012:19:03:31 +0200] "GET /favicon.ico HTTP/1.1" 403 507 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [24/Mar/2012:19:03:31 +0200] "GET /favicon.ico HTTP/1.1" 403 507 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [24/Mar/2012:19:04:14 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 403 517 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [24/Mar/2012:19:04:32 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 403 517 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [24/Mar/2012:19:05:20 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 403 517 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [24/Mar/2012:19:05:55 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 403 517 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [24/Mar/2012:19:07:31 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 403 517 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+
+==> /var/log/apache2/localbands_error.log <==
+[Tue Mar 27 18:28:42 2012] [error] [client 127.0.0.1] PHP Stack trace:
+[Tue Mar 27 18:28:42 2012] [error] [client 127.0.0.1] PHP   1. {main}() /media/cloud/home/work/localbands/web/app.php:0
+[Tue Mar 27 18:28:42 2012] [error] [client 127.0.0.1] PHP   2. require_once() /media/cloud/home/work/localbands/web/app.php:3
+[Tue Mar 27 18:28:42 2012] [error] [client 127.0.0.1] PHP   3. require_once() /media/cloud/home/work/localbands/app/bootstrap.php.cache:3
+[Tue Mar 27 18:28:42 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 0 to 2 : URL /app.php
+[Sat Mar 31 17:24:46 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 6737 to 1840 : URL /app_dev.php/charl/hello
+[Sat Mar 31 17:25:10 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 6737 to 1840 : URL /app_dev.php/charl/hello
+[Sat Mar 31 17:25:29 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 6737 to 1840 : URL /app_dev.php/charl/hello
+[Sat Mar 31 17:25:38 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 6737 to 1840 : URL /app_dev.php/charl/hello
+[Sat Mar 31 17:26:02 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 6737 to 1840 : URL /app_dev.php/charl/hello
+
+==> /var/log/apache2/error_localbands.log <==
+[Sat Mar 24 19:04:14 2012] [error] [client 127.0.0.1] Symbolic link not allowed or link target not accessible: /home/charl/work
+[Sat Mar 24 19:04:14 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 307 to 234 : URL /app_dev.php/charl/hello
+[Sat Mar 24 19:04:32 2012] [error] [client 127.0.0.1] Symbolic link not allowed or link target not accessible: /home/charl/work
+[Sat Mar 24 19:04:32 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 307 to 234 : URL /app_dev.php/charl/hello
+[Sat Mar 24 19:05:20 2012] [error] [client 127.0.0.1] Symbolic link not allowed or link target not accessible: /home/charl/work
+[Sat Mar 24 19:05:20 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 307 to 234 : URL /app_dev.php/charl/hello
+[Sat Mar 24 19:05:55 2012] [error] [client 127.0.0.1] Symbolic link not allowed or link target not accessible: /home/charl/work
+[Sat Mar 24 19:05:55 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 307 to 234 : URL /app_dev.php/charl/hello
+[Sat Mar 24 19:07:31 2012] [error] [client 127.0.0.1] Symbolic link not allowed or link target not accessible: /home/charl/work
+[Sat Mar 24 19:07:31 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 307 to 234 : URL /app_dev.php/charl/hello
+
+==> /var/log/apache2/localbands_access.log <==
+127.0.0.1 - - [26/Mar/2012:22:07:32 +0200] "GET /favicon.ico HTTP/1.1" 200 292 "-" "Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.11 (KHTML, like Gecko) Ubuntu/11.04 Chromium/17.0.963.83 Chrome/17.0.963.83 Safari/535.11"
+127.0.0.1 - - [26/Mar/2012:22:07:53 +0200] "GET / HTTP/1.1" 200 293 "-" "Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.11 (KHTML, like Gecko) Ubuntu/11.04 Chromium/17.0.963.83 Chrome/17.0.963.83 Safari/535.11"
+127.0.0.1 - - [26/Mar/2012:22:07:53 +0200] "GET /favicon.ico HTTP/1.1" 200 292 "-" "Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.11 (KHTML, like Gecko) Ubuntu/11.04 Chromium/17.0.963.83 Chrome/17.0.963.83 Safari/535.11"
+127.0.0.1 - - [27/Mar/2012:18:28:22 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 200 293 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [27/Mar/2012:18:28:42 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 200 293 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [31/Mar/2012:17:24:45 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 500 2154 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [31/Mar/2012:17:25:10 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 500 2154 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [31/Mar/2012:17:25:29 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 500 2154 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [31/Mar/2012:17:25:38 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 500 2154 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [31/Mar/2012:17:26:02 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 500 2154 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+
+==> /home/charl/work/localbands/app/logs/prod.log <==
+[2012-03-15 20:38:32] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /home/charl/work/Symfony/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/EventListener/RouterListener.php line 83 [] []
+
+==> /home/charl/work/localbands/app/logs/dev.log <==
+[2012-03-15 20:39:00] event.DEBUG: Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener::onKernelController". [] []
+[2012-03-15 20:39:00] event.DEBUG: Notified event "kernel.controller" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener::onKernelController". [] []
+[2012-03-15 20:39:00] event.DEBUG: Notified event "kernel.controller" to listener "Acme\DemoBundle\ControllerListener::onKernelController". [] []
+[2012-03-15 20:39:00] event.DEBUG: Notified event "kernel.controller" to listener "JMS\SecurityExtraBundle\Controller\ControllerListener::onCoreController". [] []
+[2012-03-15 20:39:00] event.DEBUG: Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ResponseListener::onKernelResponse". [] []
+[2012-03-15 20:39:00] event.DEBUG: Notified event "kernel.response" to listener "Symfony\Bundle\SecurityBundle\EventListener\ResponseListener::onKernelResponse". [] []
+[2012-03-15 20:39:00] event.DEBUG: Notified event "kernel.response" to listener "Symfony\Bridge\Monolog\Handler\FirePHPHandler::onKernelResponse". [] []
+[2012-03-15 20:39:00] event.DEBUG: Notified event "kernel.response" to listener "Sensio\Bundle\FrameworkExtraBundle\EventListener\CacheListener::onKernelResponse". [] []
+[2012-03-15 20:39:00] event.DEBUG: Notified event "kernel.response" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelResponse". [] []
+[2012-03-15 20:39:00] event.DEBUG: Notified event "kernel.response" to listener "Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener::onKernelResponse". [] []
+^C
+charl@mig25:/media/cloud/home/open/nest/salsa/instructors/terminals$ xit
+charl@mig25:/media/cloud/home/open/nest/salsa/instructors/terminals/bash/out$ q[Kxit
+charl@mig25:~/open/nest/salsa/instructors/terminals/bash/out$ op log apache
+==> /var/log/apache2/error.log <==
+[Fri Mar 30 02:58:02 2012] [notice] caught SIGTERM, shutting down
+[Fri Mar 30 08:22:51 2012] [notice] Apache/2.2.17 (Ubuntu) PHP/5.3.5-1ubuntu7.7 with Suhosin-Patch configured -- resuming normal operations
+[Fri Mar 30 17:15:16 2012] [notice] Apache/2.2.17 (Ubuntu) PHP/5.3.5-1ubuntu7.7 with Suhosin-Patch configured -- resuming normal operations
+[Fri Mar 30 18:40:49 2012] [notice] caught SIGTERM, shutting down
+[Fri Mar 30 18:42:03 2012] [notice] Apache/2.2.17 (Ubuntu) PHP/5.3.5-1ubuntu7.7 with Suhosin-Patch configured -- resuming normal operations
+[Sat Mar 31 08:32:39 2012] [notice] Apache/2.2.17 (Ubuntu) PHP/5.3.5-1ubuntu7.7 with Suhosin-Patch configured -- resuming normal operations
+[Sat Mar 31 14:11:24 2012] [notice] Apache/2.2.17 (Ubuntu) PHP/5.3.5-1ubuntu7.7 with Suhosin-Patch configured -- resuming normal operations
+[Sat Mar 31 14:23:01 2012] [notice] Apache/2.2.17 (Ubuntu) PHP/5.3.5-1ubuntu7.7 with Suhosin-Patch configured -- resuming normal operations
+[Sat Mar 31 15:23:34 2012] [notice] caught SIGTERM, shutting down
+[Sat Mar 31 16:53:31 2012] [notice] Apache/2.2.17 (Ubuntu) PHP/5.3.5-1ubuntu7.7 with Suhosin-Patch configured -- resuming normal operations
+
+==> /var/log/apache2/access.log <==
+127.0.0.1 - - [24/Mar/2012:19:41:31 +0200] "OPTIONS * HTTP/1.0" 200 152 "-" "Apache/2.2.17 (Ubuntu) (internal dummy connection)"
+127.0.0.1 - - [24/Mar/2012:19:41:31 +0200] "OPTIONS * HTTP/1.0" 200 152 "-" "Apache/2.2.17 (Ubuntu) (internal dummy connection)"
+127.0.0.1 - - [24/Mar/2012:19:41:31 +0200] "OPTIONS * HTTP/1.0" 200 152 "-" "Apache/2.2.17 (Ubuntu) (internal dummy connection)"
+127.0.0.1 - - [24/Mar/2012:19:41:31 +0200] "OPTIONS * HTTP/1.0" 200 152 "-" "Apache/2.2.17 (Ubuntu) (internal dummy connection)"
+127.0.0.1 - - [24/Mar/2012:19:41:31 +0200] "OPTIONS * HTTP/1.0" 200 152 "-" "Apache/2.2.17 (Ubuntu) (internal dummy connection)"
+
+==> /var/log/apache2/access_localbands.log <==
+127.0.0.1 - - [24/Mar/2012:19:03:31 +0200] "GET / HTTP/1.1" 403 503 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [24/Mar/2012:19:03:31 +0200] "GET /favicon.ico HTTP/1.1" 403 507 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [24/Mar/2012:19:03:31 +0200] "GET /favicon.ico HTTP/1.1" 403 507 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [24/Mar/2012:19:04:14 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 403 517 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [24/Mar/2012:19:04:32 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 403 517 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [24/Mar/2012:19:05:20 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 403 517 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [24/Mar/2012:19:05:55 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 403 517 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [24/Mar/2012:19:07:31 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 403 517 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+
+==> /var/log/apache2/localbands_error.log <==
+[Tue Mar 27 18:28:42 2012] [error] [client 127.0.0.1] PHP Stack trace:
+[Tue Mar 27 18:28:42 2012] [error] [client 127.0.0.1] PHP   1. {main}() /media/cloud/home/work/localbands/web/app.php:0
+[Tue Mar 27 18:28:42 2012] [error] [client 127.0.0.1] PHP   2. require_once() /media/cloud/home/work/localbands/web/app.php:3
+[Tue Mar 27 18:28:42 2012] [error] [client 127.0.0.1] PHP   3. require_once() /media/cloud/home/work/localbands/app/bootstrap.php.cache:3
+[Tue Mar 27 18:28:42 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 0 to 2 : URL /app.php
+[Sat Mar 31 17:24:46 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 6737 to 1840 : URL /app_dev.php/charl/hello
+[Sat Mar 31 17:25:10 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 6737 to 1840 : URL /app_dev.php/charl/hello
+[Sat Mar 31 17:25:29 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 6737 to 1840 : URL /app_dev.php/charl/hello
+[Sat Mar 31 17:25:38 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 6737 to 1840 : URL /app_dev.php/charl/hello
+[Sat Mar 31 17:26:02 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 6737 to 1840 : URL /app_dev.php/charl/hello
+
+==> /var/log/apache2/error_localbands.log <==
+[Sat Mar 24 19:04:14 2012] [error] [client 127.0.0.1] Symbolic link not allowed or link target not accessible: /home/charl/work
+[Sat Mar 24 19:04:14 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 307 to 234 : URL /app_dev.php/charl/hello
+[Sat Mar 24 19:04:32 2012] [error] [client 127.0.0.1] Symbolic link not allowed or link target not accessible: /home/charl/work
+[Sat Mar 24 19:04:32 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 307 to 234 : URL /app_dev.php/charl/hello
+[Sat Mar 24 19:05:20 2012] [error] [client 127.0.0.1] Symbolic link not allowed or link target not accessible: /home/charl/work
+[Sat Mar 24 19:05:20 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 307 to 234 : URL /app_dev.php/charl/hello
+[Sat Mar 24 19:05:55 2012] [error] [client 127.0.0.1] Symbolic link not allowed or link target not accessible: /home/charl/work
+[Sat Mar 24 19:05:55 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 307 to 234 : URL /app_dev.php/charl/hello
+[Sat Mar 24 19:07:31 2012] [error] [client 127.0.0.1] Symbolic link not allowed or link target not accessible: /home/charl/work
+[Sat Mar 24 19:07:31 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib: Compressed 307 to 234 : URL /app_dev.php/charl/hello
+
+==> /var/log/apache2/localbands_access.log <==
+127.0.0.1 - - [26/Mar/2012:22:07:32 +0200] "GET /favicon.ico HTTP/1.1" 200 292 "-" "Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.11 (KHTML, like Gecko) Ubuntu/11.04 Chromium/17.0.963.83 Chrome/17.0.963.83 Safari/535.11"
+127.0.0.1 - - [26/Mar/2012:22:07:53 +0200] "GET / HTTP/1.1" 200 293 "-" "Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.11 (KHTML, like Gecko) Ubuntu/11.04 Chromium/17.0.963.83 Chrome/17.0.963.83 Safari/535.11"
+127.0.0.1 - - [26/Mar/2012:22:07:53 +0200] "GET /favicon.ico HTTP/1.1" 200 292 "-" "Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.11 (KHTML, like Gecko) Ubuntu/11.04 Chromium/17.0.963.83 Chrome/17.0.963.83 Safari/535.11"
+127.0.0.1 - - [27/Mar/2012:18:28:22 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 200 293 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [27/Mar/2012:18:28:42 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 200 293 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [31/Mar/2012:17:24:45 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 500 2154 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [31/Mar/2012:17:25:10 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 500 2154 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [31/Mar/2012:17:25:29 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 500 2154 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [31/Mar/2012:17:25:38 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 500 2154 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [31/Mar/2012:17:26:02 +0200] "GET /app_dev.php/charl/hello HTTP/1.1" 500 2154 "-" "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0"
+^C
+charl@mig25:~/open/nest/salsa/instructors/terminals/bash/out$ xit
