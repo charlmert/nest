@@ -1,11 +1,29 @@
 #!/bin/bash
 SALSA_BASH_VERSION=0.1
 
+# teach formatting will attempt to train salsa regarding color constants and their usages
+# als salsa will learn how and what control charachters mean and how to interpret during
+# analysis runs.
+
+# todo, build this into analysis run
+function strip_formatting() {
+# TODO: obtain full list of shell formatting commands
+# Bash Color Format Constants
+BASH_FG="30 31 32 33 34 35 36 37"
+BASH_BG="40 41 42 43 44 45 46 47"
+BASH_TYPE="1 4 5 7 8"
+
+for FORMAT in $BASH_FG; do
+	echo "color const: \[\033["$FORMAT"m\]"
+done
+}
+
 function main() {
 # script self aware relative
 local BASE_PATH=`find_base_path 4`
 CURR_PATH=$(pwd)
-(cd $BASE_PATH/instructors/terminals/bash/out && screen -s /bin/bash -S "salsa - bash instructor $VERSION" -L)
+#cat $BASE_PATH/instructors/terminals/bash/out/*
+strip_formatting
 }
 
 # resolves symbolic links
