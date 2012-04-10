@@ -1,0 +1,16 @@
+research>   replaying segments of a mysql.log query logged log file
+            to automate repeatable patterns.
+
+e.g.
+on wordpress applying the bulk action "Move to trash" produces the following
+output in /var/log/mysql/mysql.log
+
+Describing log output:
+timestamp, id, label, query
+
+research>   These queries can be analyzed and pruned of reusable pattern type
+            data found to be repeatable and replayed to reproduce the intended
+            action for the snippet.
+
+            Important to note that determining start/stop blocks are crucial to
+            having this work properly
