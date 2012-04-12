@@ -1,1 +1,1 @@
-/home/charl/open/nest/octoplasm/pebbles/logstreamer.sh
+/home/charl/nest/octoplasm/pebbles/logstreamer.sh

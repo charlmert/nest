@@ -11,9 +11,25 @@
 fs         			= require ('fs');
 path       			= require ('path');
 http       			= require ('http');
-sys     			= require ('sys');
+sys     			  = require ('sys');
 child_process   = require ('child_process');
-//opt_parse   		= require ('optparse');
+//opt_parse   	= require ('optparse');
+
+//TODO: build self awareness, traverse symlinks, relative pathing
+//      fs.readlink(path)
+//			path.basename(path)
+//			path.dirname(path)
+//			path.normalize(path); path/..//../../ becomes path // trajectory pathing. self aware of options
+
+base_path = process.env.PWD;
+config = fs.readFileSync(base_path + '/../../config/pebbles.json', 'utf-8');
+if (!config) {
+	process.exit(1);
+}
+
+//TODO: consider file types seperator e.g. filestreamer.js = filestreamer_js
+config = JSON.parse(config);
+compiled = process.compile('config = config.' + path.basename(__filename, '.js') + ';', __filename);
 
 // child process container
 function sub_shell(error, stdout, stderr) {
