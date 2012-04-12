@@ -1,0 +1,20 @@
+The running name for the do once never again platform.
+
+should be cloudable infrastructure for the placement of salsa cases
+indexed and seachable according to loosley coupled critereon
+
+once a usable case is found against a match for octoplasm it should
+be executed and logged for further training exercises.
+
+Can be seen as a series of scaffolds other users can jump on to
+continue building rather than reinventing the wheel.
+
+research>	Will need to jump into design considerations of oop and
+				  other engine detail under the bonnet hiding methedologies
+
+Hence will serve as the reusable solution platform.
+Cases should be heiarchially structured e.g.
+	A case for scaffolding (parent case):
+	- network configuration for a particular set of nodes
+	  the solution can be analyzed by salsa with a network monitor
+    and system monitor as instructors.
