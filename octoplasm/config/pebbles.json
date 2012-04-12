@@ -1,0 +1,9 @@
+{
+  "filestreamer": {
+		"cp" : {
+    	"parameters" 	: ["4b8436221bb19f78962644434669afd5", "5338b151154663bac9980b0f044518f2", "dca90348d03e2bdb52ad4cc669a23ebd", "47fa03ef5536c5573b137cec5adc2d39"],
+    	"types" 			: ["text", "binary"]
+		}
+  }
+}
+
