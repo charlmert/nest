@@ -2,7 +2,7 @@
 SALSA_BASH_VERSION=0.1
 
 # teach formatting will attempt to train salsa regarding color constants and their usages
-# als salsa will learn how and what control charachters mean and how to interpret during
+# salsa will learn how and what control characters mean and how to interpret during
 # analysis runs.
 
 # todo, build this into analysis run
@@ -13,17 +13,57 @@ BASH_FG="30 31 32 33 34 35 36 37"
 BASH_BG="40 41 42 43 44 45 46 47"
 BASH_TYPE="1 4 5 7 8"
 
-for FORMAT in $BASH_FG; do
-	echo "color const: \[\033["$FORMAT"m\]"
+for X in $BASH_FG; do
+	echo "["$X"m"
 done
+
+for Y in $BASH_FG; do
+	echo "["$Y"m"
+done
+
+for X in $BASH_FG; do
+	for Y in $BASH_BG; do
+		echo "["$X";"$Y"m"
+	done
+done
+
+for FORMAT in $BASH_TYPE; do
+	echo "["$FORMAT"m"
+done
+
 }
 
 function main() {
 # script self aware relative
 local BASE_PATH=`find_base_path 4`
 CURR_PATH=$(pwd)
-#cat $BASE_PATH/instructors/terminals/bash/out/*
-strip_formatting
+OUTPUT=`cat $BASE_PATH/instructors/terminals/bash/out/*`
+
+for FORMAT in `strip_formatting`; do
+	SL_FORMAT=`regex_slashes $FORMAT`
+	#OUTPUT=`sed $FORMAT`
+	OUPUT=`echo $OUTPUT | sed $(printf "%q" "s#$SL_FORMAT##g")`
+done
+
+echo $OUTPUT
+}
+
+function bash_slashes() {
+	if [ -z "$1" ]; then 
+		return ""
+	fi
+
+	printf "%q" "$1"
+}
+
+function regex_slashes() {
+	if [ -z "$1" ]; then 
+		return ""
+	fi
+
+	OUTPUT=`printf "%q" "$1"`
+	OUTPUT=`echo $OUTPUT | sed s#\\\\[#\\\\\\\\[#g`
+	echo $OUTPUT
 }
 
 # resolves symbolic links

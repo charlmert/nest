@@ -1,0 +1,10 @@
+charl@mig25:~/open/nest/salsa/instructors/terminals/bash/out$ ls
+screenlog.0
+charl@mig25:~/open/nest/salsa/instructors/terminals/bash/out$ cd ~/nest/research/r.stats/
+cases/               data/                docs/                rtest.r              study.r              
+chem-data.txt        depends/             ex.dat               salsa-gen-profile.r  test-analyzer.r      
+charl@mig25:~/open/nest/salsa/instructors/terminals/bash/out$ cd ~/research/r.stats/
+charl@mig25:~/research/r.stats$ ls
+cases  chem-data.txt  data  depends  docs  ex.dat  rtest.r  salsa-gen-profile.r  study.r  test-analyzer.r
+charl@mig25:~/research/r.stats$ cp chem-data.txt /tmp/c
+charl@mig25:~/research/r.stats$ exit

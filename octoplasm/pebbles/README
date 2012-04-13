@@ -5,3 +5,7 @@ pebble with the most used arguments
 Pebble scripts are housed in beds/servers.
 
 The default pebbles for the different types of beds can be found in ../beds/*
+pebble spec:
+ - must interpret stdin, stderr, stdout and exit with a code
+ - must be self maintainable
+ - must be serially configurable
