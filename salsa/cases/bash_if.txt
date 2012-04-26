@@ -1,0 +1,3 @@
+charl@charl-developer:~/work/callcenter/src/unsubscribe_bash_scripts$ [ -2345 -gt 1234 ] || echo "NO"
+NO
+charl@charl-developer:~/work/callcenter/src/unsubscribe_bash_scripts$ [ 2345 -gt 1234 ] || echo "NO"

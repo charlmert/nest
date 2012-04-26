@@ -1,0 +1,21 @@
+charl@ubuntu804:~/work/dieson/app$ sudo su ftpdieson
+sudo: cannot get working directory
+[sudo] password for charl: 
+sudo: pam_authenticate: Conversation error
+charl@ubuntu804:~/work/dieson/app$ sudo su
+sudo: cannot get working directory
+[sudo] password for charl: 
+shell-init: error retrieving current directory: getcwd: cannot access parent
+directories: No such file or directory
+job-working-directory: error retrieving current directory: getcwd: cannot
+access parent directories: No such file or directory
+job-working-directory: error retrieving current directory: getcwd: cannot
+access parent directories: No such file or directory
+job-working-directory: error retrieving current directory: getcwd: cannot
+access parent directories: No such file or directory
+root@ubuntu804:.# 
+root@ubuntu804:.# 
+root@ubuntu804:.# 
+root@ubuntu804:.# ls
+job-working-directory: error retrieving current directory: getcwd: cannot
+access parent directories: No such file or directory
