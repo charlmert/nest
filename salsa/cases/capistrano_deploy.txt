@@ -1,0 +1,83 @@
+INIT: first set of instructions, analyze for watchpoints.
+
+ftpdieson@charl-developer:~/deploy/source/dieson_app$ cap deploy
+* executing `deploy'
+* executing `deploy:update'
+** transaction: start
+* executing `deploy:update_code'
+executing locally: "git ls-remote git@github.com:miranetworks/die_son.git HEAD"
+/usr/bin/git
+* executing "git clone -q git@github.com:miranetworks/die_son.git /home/ms/deploy/releases/20120531115424 && cd /home/ms/deploy/releases/20120531115424 && git checkout -q -b deploy a8dcdb25476f0cd788285640757902a24ccb0343 && (echo a8dcdb25476f0cd788285640757902a24ccb0343 > /home/ms/deploy/releases/20120531115424/REVISION)"
+servers: ["dieson.staging.miranetworks.net"]
+[dieson.staging.miranetworks.net] executing command
+command finished
+* executing `deploy:finalize_update'
+* executing "chmod -R g+w /home/ms/deploy/releases/20120531115424"
+servers: ["dieson.staging.miranetworks.net"]
+[dieson.staging.miranetworks.net] executing command
+command finished
+* executing "rm -rf /home/ms/deploy/releases/20120531115424/log /home/ms/deploy/releases/20120531115424/public/system /home/ms/deploy/releases/20120531115424/tmp/pids &&\\\n      mkdir -p /home/ms/deploy/releases/20120531115424/public &&\\\n      mkdir -p /home/ms/deploy/releases/20120531115424/tmp &&\\\n      ln -s /home/ms/deploy/shared/log /home/ms/deploy/releases/20120531115424/log &&\\\n      ln -s /home/ms/deploy/shared/system /home/ms/deploy/releases/20120531115424/public/system &&\\\n      ln -s /home/ms/deploy/shared/pids /home/ms/deploy/releases/20120531115424/tmp/pids"
+servers: ["dieson.staging.miranetworks.net"]
+[dieson.staging.miranetworks.net] executing command
+command finished
+* executing `deploy:symlink'
+* executing "rm -f /home/ms/deploy/current && ln -s /home/ms/deploy/releases/20120531115424 /home/ms/deploy/current"
+servers: ["dieson.staging.miranetworks.net"]
+[dieson.staging.miranetworks.net] executing command
+command finished
+** transaction: commit
+* executing `deploy:restart'
+[DEPRECATED] `deploy:restart` is going to be changed to Passenger mod_rails' method after 2.5.9 - see http://is.gd/2BPeA
+* executing "/home/ms/deploy/current/script/process/reaper"
+servers: ["dieson.staging.miranetworks.net"]
+[dieson.staging.miranetworks.net] executing command
+*** [err :: dieson.staging.miranetworks.net] sh: /home/ms/deploy/current/script/process/reaper: not found
+command finished
+failed: "sh -c '/home/ms/deploy/current/script/process/reaper'" on dieson.staging.miranetworks.net
+
+PHASE 2: Determining missing startup scripts etc. scripts/process/reaper and scripts/process/spin
+* executing `deploy'
+* executing `deploy:update'
+** transaction: start
+* executing `deploy:update_code'
+executing locally: "git ls-remote git@github.com:miranetworks/die_son.git HEAD"
+/usr/bin/git
+* executing "git clone -q git@github.com:miranetworks/die_son.git /home/ms/deploy/releases/20120531120110 && cd /home/ms/deploy/releases/20120531120110 && git checkout -q -b deploy a8dcdb25476f0cd788285640757902a24ccb0343 && (echo a8dcdb25476f0cd788285640757902a24ccb0343 > /home/ms/deploy/releases/20120531120110/REVISION)"
+servers: ["dieson.staging.miranetworks.net"]
+[dieson.staging.miranetworks.net] executing command
+command finished
+* executing `deploy:finalize_update'
+* executing "chmod -R g+w /home/ms/deploy/releases/20120531120110"
+servers: ["dieson.staging.miranetworks.net"]
+[dieson.staging.miranetworks.net] executing command
+command finished
+* executing "rm -rf /home/ms/deploy/releases/20120531120110/log /home/ms/deploy/releases/20120531120110/public/system /home/ms/deploy/releases/20120531120110/tmp/pids &&\\\n      mkdir -p /home/ms/deploy/releases/20120531120110/public &&\\\n      mkdir -p /home/ms/deploy/releases/20120531120110/tmp &&\\\n      ln -s /home/ms/deploy/shared/log /home/ms/deploy/releases/20120531120110/log &&\\\n      ln -s /home/ms/deploy/shared/system /home/ms/deploy/releases/20120531120110/public/system &&\\\n      ln -s /home/ms/deploy/shared/pids /home/ms/deploy/releases/20120531120110/tmp/pids"
+servers: ["dieson.staging.miranetworks.net"]
+[dieson.staging.miranetworks.net] executing command
+command finished
+* executing `deploy:symlink'
+* executing "rm -f /home/ms/deploy/current && ln -s /home/ms/deploy/releases/20120531120110 /home/ms/deploy/current"
+servers: ["dieson.staging.miranetworks.net"]
+[dieson.staging.miranetworks.net] executing command
+command finished
+** transaction: commit
+* executing `deploy:restart'
+[DEPRECATED] `deploy:restart` is going to be changed to Passenger mod_rails' method after 2.5.9 - see http://is.gd/2BPeA
+* executing "/home/ms/deploy/current/script/process/reaper"
+servers: ["dieson.staging.miranetworks.net"]
+[dieson.staging.miranetworks.net] executing command
+*** [err :: dieson.staging.miranetworks.net] sh: /home/ms/deploy/current/script/process/reaper: not found
+command finished
+failed: "sh -c '/home/ms/deploy/current/script/process/reaper'" on dieson.staging.miranetworks.net
+
+research> the developers assistant should be able to train itself to be aware of configurations and possible recommendations
+          to aid the intended use of capistrano deployment such that it would lighten the learning curve and reach
+          the best practise method for deployment using the scaffold architecture.
+          
+          The general consideration is that eventually the diffs between configuration against environment will
+          reach a statistically analyzed terminal velocity on best practises specified and recommended by people
+          in the industry who constantly battle test and support their reasons for deeming any specific set of
+          instructions as best practise. The scaffold architecture will collect this in a loosley structured
+          mannor and allow consequent runs of analysis, builds, usages of capistrano to build on the best practises.
+
+          The goal being to remove any possible set of lowest common denominator in any input effort. Hence input compression.
