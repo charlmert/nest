@@ -1,0 +1,109 @@
+Chair: Producing Symfony 2 Skelleton from a defined set of flow diagrams.
+
+intro: Ever watched Iron Man, you know that part where Tony Stark just pulls together hollogram objects
+       spins it around, puts some block ontop of some other block and wham, the system just hacked the
+       world and got all of the relevant information for perusal.
+
+       Or how Jarvis just does what ever tony says with the exception of going through some sought of statistical
+       analysis to everything that get's requested to be executed with all the correct best practise options.
+
+       Well the replay or showflow tools attempts to kindof sought of do some of that minus the virtual reality
+       and absolute voice interpreter engine. Jarvis will still represent a major point of easy interface to
+       this.
+
+       show flow: set of structured layering to visually produce a code base spanning multiple projects with
+       all their interlinked chains of interfaces. Thhe ability to search against a specific state should
+       also be able to be presented as a statefull flow diagram.
+
+research> stateful flow diagrams need to be refined and further made visible to the not so trained up
+          end user (coders are end users also). Once this is refined it will be possible to convey every
+          type of captured state in the form of profiling (cache grind) or any other type remote debugging
+          or similar systems.
+
+review: Pull flows for sole purpose of representing flows of the target code base accross architectures.
+
+interresting> Using indexed code via URI endpoint to specify context accross projects:
+ref: http://src.opensolaris.org/source/search?q=Display&project=content&defs=&refs=&path=&hist=
+e.g. would yield a combined layered flow diagram with contextual layers in highest opacity.
+
+http://hub.opensolaris.org/bin/download/Project+opengrok/files/opengrok-0.11.1.tar.gz
+
+reserach> This will serve as a good place to index profiling or stateful information.
+          stateful information: a story about code and the environment code acted against
+          at a specific period in time for a specific set of purposes (experience theory).
+
+replay: Creating Code Skelleton + Needed Meaty Bits from 3D Flow Diagrams.
+        2D cartesian plane + layered detail as 3rd plane
+        layered detail e.g. function call branch to entire platform dependancy branch
+        contextual view will select parts of these layers to display specific / human readible flows.
+        2D and 3D containers must span projects and dependancy chains. (oop container abstract, interface)
+        distinguish between container and customized grouped sets.
+
+reserach> Meaty Bits needs a scaffold type platform for determining best practise "how to write a line of code for what reason"
+          type stuff. (I re-iterate, NEEDS a best practise i.e. stackoverflow as a business process)
+
+research> reverse auto taxonomy process for labelling human readible constructs.
+          apply naming convention procedure with means to rewrite target base.
+
+research> display flow diagram layers via blended opacity with distinct language specific color codes.
+          e.g. vim.php, vim.erlang colors
+
+research> extracing flows from a system need to be replayed into any language.
+
+research> checkout all standards based oop and other modelling languages, support for reversing between all.
+          UML, XMI
+
+ref: http://en.wikipedia.org/wiki/XML_Metadata_Interchange
+    Common Warehouse Metamodel
+    Web Ontology Language
+    Generic Modeling Environment (GME)
+    Eclipse Modeling Framework (EMF)
+    Domain Specific Language (DSL)
+    Domain-specific modelling (DSM)
+    Meta-modeling
+    Meta-Object Facility (MOF)
+
+1. use code syntax, variable names, other naming conventions and language specific constructs
+   as strictly compliant metadata to flows.
+
+2. flow must be able to zoom to the detail of every dependant method call. i.e. layered function call branches, platform branches / containers.
+
+   dependancy heiarchy will be defined for including layers as visual components
+   e.i. symfony as a layer will produce open flow constructs to define database init
+   and specific types of get/set invokations.
+
+3. the ability to replay flows will then iterate through templates and detailed metadata bags
+   such that the entire flow is explained in a detailed code base making use of the best fit
+   peices <scaffolded> of each layer etc.
+
+4. the configurations and best practices for best applying each of the layers should tie into
+   chef or scaffold, when chef reaches the code mash up phase.
+   
+5. templates should abstract flow components from flow construct and execution. The connectors and control structures
+   being the elements kept in strict accordance to a (rfc/ieee standard needed).
+
+research> find rfc or ieee standards or documents facilitating the attempt at automating description to design.
+
+ref: http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=1248718&contentType=Conference+Publications
+
+[ Dia - Import / Export ]
+
+Importing:
+1. autodia does a good job of importing from existing code bases using perl.
+2. import UML
+3. refine UML to custom structures. i.e. must have the ability to merge abstracts such that UML can be exported and imported.
+
+Exporting:
+1. the distinct components will have to be included as xml namespace or attribute means of labelling
+   included in the DIA xml document.
+
+2. functions/layers/z axis containers and their internal representations might be enabled by a "Show Detail" or "Hide Detail" in the
+   dia diagram.
+
+3. this will be true for every layer all the way into their distinct most detailed end points.
+   e.g. symfony -> propel -> schema -> model -> save
+
+4. code generation will include snapshots of xml component maps against layers e.g. replay.plugin.symfony_1-0-21.xml (symfony)
+
+research> the ability to produce back to standardized control flow elements should be tested.
+          will enable the automated reversing of entire layers: symfony, phpcake.
