@@ -1,0 +1,58 @@
+Goals: An attempt to harvest semantics of cross correlating possibly similar
+       abstracts to forge a system. This is insane, it can be done, it can.
+
+Goals: Attempt to pull automatically a set of semantics describing from an
+       automated process.
+
+research> auto algo
+          in compression the initial and end data is known.
+          to compress an mp3 the algorithim should effectively
+          reduce the amount of storage with an acceptable quality
+          when replayed. in compression and decompression this
+          is done via sorting, tokenizing etc. and everything is
+          just restored. the focus should move from creating the
+          algorithims for these to analyzing the start and end
+          data in order to automatically derive an algorithm until
+          start and end data is satisfied or matched to within a
+          standard deveation or 90% etc.
+
+research> auto oop
+          the process for deriving objects could lend from this.
+          would be interesting to see if it would actually aid
+          in creating some sort of automatic set of derived design patterns.
+
+Harvesting the perfect replication scheme from a story of cross pollination:
+
+Replication has of thus far consisted of master nodes, slave nodes
+in it's infant arrays to facilitate the process of making data reliable
+and available to the maximum effecient.
+
+This is an abstract of an abstractial:
+
+ref: http://www.backyardbeekeepers.com/facts.html
+Pollination
+Agriculture depends greatly on the honeybee for pollination. Honeybees account for 80% of all insect pollination. Without such pollination, we would see a significant decrease in the yield of fruits and vegetables.
+
+[ derived: ]
+Workers, known to be the endpoints to which portions of work are delegated to in concurrent systems.
+Workers in this abstract should lend learnt properties from worker bees to construct the worker object.
+
+The read request for determining should be the smallest linked list through workers to the pollen vector.
+
+In effect, copy and paste what worker bees do and replay it in replication with objects and stuff.
+
+ref: http://en.wikipedia.org/wiki/Pollination#Pollen_vectors
+Pollen vectors
+
+Biotic pollen vectors are animals, usually insects, but also reptiles, birds, mammals, and sundry others, that routinely transport pollen and play a role in pollination. This is usually as a result of their activities when visiting plants for feeding, breeding or shelter. The pollen adheres to the vector's body parts such as face, legs or mouthparts or to the hair mammals. Such transport is vital to the pollination of many plant species.
+
+[ derived: ]
+Pollen vectors as the identifier for replication hosts.
+Describes the relation to the worker bee's role as well as the objects being replicated.
+
+ref: http://www.virginiahoneybee.com/content/part-1-swarm-replication
+Part 1 - Swarm Replication:
+Although one option is to introduce a new queen, to truly replicate a 'swarm consequence', you would have to dequeen the hive receiving the new queen a few weeks in advance. Then, you'll need to go in and destroy queen cells and hope that a new queen is not made. This is a lot of work, especially if you are dealing with more then one or two hives.
+
+[ derived: ]
+Higher level domain replication and rules and constraints, metrics involved in deciding which domain leads the replication.
