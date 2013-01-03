@@ -1,0 +1,6 @@
+research> symfony 1.0.21 versus 1.4.5 directory location for the phing build thingy library
+symfony_1.0.21/lib/symfony/vendor/phing/Phing.php
+
+symfony1.4.5/lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/Phing.php
+
+diff -c lib/vendor/symfony/lib/plugins/sfPropelPlugin/lib/vendor/phing/Phing.php ~/work/callcenter/src/symfony_1.0.21/lib/symfony/vendor/phing/Phing.php

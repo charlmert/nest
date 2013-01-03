@@ -1,0 +1,35 @@
+Unable to handle kernel paging request at virtual address e9dc2000
+printing eip:
+c01123c4
+00589000 -> *pde = 00000007:f0e97027
+0058a000 -> *pme = 00000007:f0e41067
+005e0000 -> *pte = 80000005:4e65f063
+Oops: 0003 [#17]
+SMP 
+Modules linked in: iptable_filter ip_tables x_tables
+CPU:    0
+    EIP:    0061:[<c01123c4>]    Tainted: GF     VLI
+EFLAGS: 00010246   (2.6.16-xenU #1) 
+    EIP is at pgd_free+0x104/0x140
+    eax: 00000000   ebx: 00000000   ecx: 00000400   edx: 80000005
+    esi: e9dc2000   edi: e9dc2000   ebp: e9d89f00   esp: e9d89ee0
+    ds: 007b   es: 007b   ss: 0069
+Process wget (pid: 14601, threadinfo=e9d88000 task=ea324a70)
+    Stack: <0>e9dc2000 00000000 00000003 ea3ce4b8 e9dc6018 e9d71c80 e9d71cc8 ea324a70 
+    e9d89f14 c011bd9b e9dc6000 e9d71cc8 e9d71c80 e9d89f28 c011be50 e9d71c80 
+    e9d71c80 e9d71cb4 e9d89f44 c011fdd0 e9d71c80 e9d71c80 e9d88000 ea324a70 
+    Call Trace:
+    [<c01058bd>] show_stack_log_lvl+0xcd/0x120
+    [<c0105abb>] show_registers+0x1ab/0x240
+    [<c0105dc1>] die+0x111/0x240
+    [<c01130a7>] do_page_fault+0x5f7/0x931
+    [<c01052ab>] error_code+0x2b/0x30
+    [<c011bd9b>] __mmdrop+0x1b/0x50
+    [<c011be50>] mmput+0x80/0xa0
+    [<c011fdd0>] exit_mm+0x80/0x100
+    [<c0120bc3>] do_exit+0xf3/0x8f0
+    [<c01213fb>] do_group_exit+0x3b/0xd0
+    [<c01214a5>] sys_exit_group+0x15/0x20
+    [<c0105119>] syscall_call+0x7/0xb
+    Code: e1 0c 25 ff 0f 00 00 09 c1 89 ce 83 ce 01 81 ee 01 00 00 40 31 db 89 5c 24 04 89 f7 89 34 24 e8 53 eb ff ff 31 c0 b9 00 04 00 00 <f3> ab a1 e4 ec 3a c0 89 74 24 04 89 04 24 e8 39 dc 04 00 8b 45 
+    <1>Fixing recursive fault but reboot is needed!

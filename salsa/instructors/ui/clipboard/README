@@ -1,0 +1,8 @@
+clipboard will serve as an easy output analyzer interface or watch point.
+to differenciate between the different types of outputs copied from the
+clipboard, sigs will have to be generated for known cases or types of output
+along with labels for each.
+
+clipboard copy action should atuomatically detect the type of instructor
+targeted. e.g. for now only supported instructors (configured instructors)
+will be allowed i.e. bash, apache

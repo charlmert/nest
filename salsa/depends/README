@@ -1,0 +1,16 @@
+salsa behavioral profiler - bash history
+
+Thanks to this guy: http://www.cuberick.com/2008/11/update-bash-history-in-realtime.html
+I can now maintain bash history accross terminals and have users with bash as their terminal
+listed as instructors to salsa.
+
+Use Case 1: (use cases will form the "do once, never again knowledge base")
+Simple installation of Symfony could be done once and never again.
+you type in a series of commands (luckily it's possible to go very far in the console with symfony
+to create your web app) to create or generate your web app.
+
+The goal is to have salsa capture every part of this (short of being a privacy sensitive key logger)
+and have relative paths/steps/requirements (short of a debug memory dump/environment snapshot) captured, 
+tagged according to a taxonomy system and have the entire symfony app creation process 
+reproduced by entering a few labels into octoplasm.
+

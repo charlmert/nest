@@ -1,0 +1,58 @@
+op log error
+
+research>   log requesting contextual resolution
+            salsa has to know how to identify resolution
+            requests and further analyze output to get
+            to the solution
+
+LOG OUTPUT:
+
+[Thu Apr 05 09:30:07 2012] [error] [client 127.0.0.1] Request exceeded the
+limit of 10 internal redirects due to probable configuration error. Use
+'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel
+debug' to get a backtrace.
+
+vi /etc/apache2/sites-enabled/site
+LogLevel debug
+
+/etc/init.d/apache2 restart
+
+[Thu Apr 05 09:30:07 2012] [error] [client 127.0.0.1] Request exceeded the
+limit of 10 internal redirects due to probable configuration error. Use
+'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel
+debug' to get a backtrace.
+[Thu Apr 05 09:30:07 2012] [debug] core.c(3065): [client 127.0.0.1] r->uri =
+/wp-content/plugins/wordpress-mobile-pack/plugins/wpmp_transcoder/c/e16313106c6988838bc49fd294804c9b
+[Thu Apr 05 09:30:07 2012] [debug] core.c(3071): [client 127.0.0.1] redirected
+from r->uri =
+/wp-content/plugins/wordpress-mobile-pack/plugins/wpmp_transcoder/c/e16313106c6988838bc49fd294804c9b
+[Thu Apr 05 09:30:07 2012] [debug] core.c(3071): [client 127.0.0.1] redirected
+from r->uri =
+/wp-content/plugins/wordpress-mobile-pack/plugins/wpmp_transcoder/c/e16313106c6988838bc49fd294804c9b
+[Thu Apr 05 09:30:07 2012] [debug] core.c(3071): [client 127.0.0.1] redirected
+from r->uri =
+/wp-content/plugins/wordpress-mobile-pack/plugins/wpmp_transcoder/c/e16313106c6988838bc49fd294804c9b
+[Thu Apr 05 09:30:07 2012] [debug] core.c(3071): [client 127.0.0.1] redirected
+from r->uri =
+/wp-content/plugins/wordpress-mobile-pack/plugins/wpmp_transcoder/c/e16313106c6988838bc49fd294804c9b
+[Thu Apr 05 09:30:07 2012] [debug] core.c(3071): [client 127.0.0.1] redirected
+from r->uri =
+/wp-content/plugins/wordpress-mobile-pack/plugins/wpmp_transcoder/c/e16313106c6988838bc49fd294804c9b
+[Thu Apr 05 09:30:07 2012] [debug] core.c(3071): [client 127.0.0.1] redirected
+from r->uri =
+/wp-content/plugins/wordpress-mobile-pack/plugins/wpmp_transcoder/c/e16313106c6988838bc49fd294804c9b
+[Thu Apr 05 09:30:07 2012] [debug] core.c(3071): [client 127.0.0.1] redirected
+from r->uri =
+/wp-content/plugins/wordpress-mobile-pack/plugins/wpmp_transcoder/c/e16313106c6988838bc49fd294804c9b
+[Thu Apr 05 09:30:07 2012] [debug] core.c(3071): [client 127.0.0.1] redirected
+from r->uri =
+/wp-content/plugins/wordpress-mobile-pack/plugins/wpmp_transcoder/c/e16313106c6988838bc49fd294804c9b
+[Thu Apr 05 09:30:07 2012] [debug] core.c(3071): [client 127.0.0.1] redirected
+from r->uri =
+/wp-content/plugins/wordpress-mobile-pack/plugins/wpmp_transcoder/c/e16313106c6988838bc49fd294804c9b
+[Thu Apr 05 09:30:07 2012] [debug] core.c(3071): [client 127.0.0.1] redirected
+from r->uri =
+/wp-content/plugins/wordpress-mobile-pack/plugins/wpmp_transcoder/c/e16313106c6988838bc49fd294804c9b
+[Thu Apr 05 09:30:07 2012] [debug] mod_deflate.c(615): [client 127.0.0.1] Zlib:
+Compressed 620 to 382 : URL
+/wp-content/plugins/wordpress-mobile-pack/plugins/wpmp_transcoder/c/e16313106c6988838bc49fd294804c9b

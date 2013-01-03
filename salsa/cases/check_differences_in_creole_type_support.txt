@@ -1,0 +1,437 @@
+INIT:
+research> check for version tokens "8.3" stemming from
+          hubot chat session:
+          "what is the extent of support for postgres data types in propel for postgres version 8.4 and propel in symfony 1.0.21"
+browser->http://www.postgresql.org/docs/8.3/static/datatype.html
+research> ACTION: get the type support table
+          using symantic relavance should calculate to more than 40% before inclined.
+          will result in resolution of data to compare against.
+          i.e. the object extracted "data types" should be compared and matched against lexically and used
+          as the source to another nodes input. this will eventually pull up the list of exact types from the
+          following table: 
+          FROM:
+<div class="TABLE">
+<a name="DATATYPE-TABLE" id="DATATYPE-TABLE"></a>
+
+<p class="c4">Table 8-1. Data Types</p>
+
+<table border="1" class="CALSTABLE">
+<col />
+<col />
+<col />
+
+<thead>
+<tr>
+<th>Name</th>
+
+<th>Aliases</th>
+
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><tt class="TYPE">bigint</tt></td>
+
+<td><tt class="TYPE">int8</tt></td>
+
+<td>signed eight-byte integer</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">bigserial</tt></td>
+
+<td><tt class="TYPE">serial8</tt></td>
+
+<td>autoincrementing eight-byte integer</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">bit [ (<tt class=
+        "REPLACEABLE c5">n</tt>) ]</tt></td>
+
+<td>&nbsp;</td>
+
+<td>fixed-length bit string</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">bit varying [ (<tt class=
+        "REPLACEABLE c5">n</tt>) ]</tt></td>
+
+<td><tt class="TYPE">varbit</tt></td>
+
+<td>variable-length bit string</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">boolean</tt></td>
+
+<td><tt class="TYPE">bool</tt></td>
+
+<td>logical Boolean (true/false)</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">box</tt></td>
+
+<td>&nbsp;</td>
+
+<td>rectangular box in the plane</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">bytea</tt></td>
+
+<td>&nbsp;</td>
+
+<td>binary data (<span class="QUOTE">"byte
+        array"</span>)</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">character varying [ (<tt class=
+        "REPLACEABLE c5">n</tt>) ]</tt></td>
+
+<td><tt class="TYPE">varchar [ (<tt class=
+        "REPLACEABLE c5">n</tt>) ]</tt></td>
+
+<td>variable-length character string</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">character [ (<tt class=
+        "REPLACEABLE c5">n</tt>) ]</tt></td>
+
+<td><tt class="TYPE">char [ (<tt class=
+        "REPLACEABLE c5">n</tt>) ]</tt></td>
+
+<td>fixed-length character string</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">cidr</tt></td>
+
+<td>&nbsp;</td>
+
+<td>IPv4 or IPv6 network address</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">circle</tt></td>
+
+<td>&nbsp;</td>
+
+<td>circle in the plane</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">date</tt></td>
+
+<td>&nbsp;</td>
+
+<td>calendar date (year, month, day)</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">double precision</tt></td>
+
+<td><tt class="TYPE">float8</tt></td>
+
+<td>double precision floating-point number</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">inet</tt></td>
+
+<td>&nbsp;</td>
+
+<td>IPv4 or IPv6 host address</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">integer</tt></td>
+
+<td><tt class="TYPE">int</tt>, <tt class=
+"TYPE">int4</tt></td>
+
+<td>signed four-byte integer</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">interval [ (<tt class=
+        "REPLACEABLE c5">p</tt>) ]</tt></td>
+
+<td>&nbsp;</td>
+
+<td>time span</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">line</tt></td>
+
+<td>&nbsp;</td>
+
+<td>infinite line in the plane</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">lseg</tt></td>
+
+<td>&nbsp;</td>
+
+<td>line segment in the plane</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">macaddr</tt></td>
+
+<td>&nbsp;</td>
+
+<td>MAC address</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">money</tt></td>
+
+<td>&nbsp;</td>
+
+<td>currency amount</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">numeric [ (<tt class=
+        "REPLACEABLE c5">p</tt>, <tt class=
+        "REPLACEABLE c5">s</tt>) ]</tt></td>
+
+<td><tt class="TYPE">decimal [ (<tt class=
+        "REPLACEABLE c5">p</tt>, <tt class=
+        "REPLACEABLE c5">s</tt>) ]</tt></td>
+
+<td>exact numeric of selectable precision</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">path</tt></td>
+
+<td>&nbsp;</td>
+
+<td>geometric path in the plane</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">point</tt></td>
+
+<td>&nbsp;</td>
+
+<td>geometric point in the plane</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">polygon</tt></td>
+
+<td>&nbsp;</td>
+
+<td>closed geometric path in the plane</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">real</tt></td>
+
+<td><tt class="TYPE">float4</tt></td>
+
+<td>single precision floating-point number</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">smallint</tt></td>
+
+<td><tt class="TYPE">int2</tt></td>
+
+<td>signed two-byte integer</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">serial</tt></td>
+
+<td><tt class="TYPE">serial4</tt></td>
+
+<td>autoincrementing four-byte integer</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">text</tt></td>
+
+<td>&nbsp;</td>
+
+<td>variable-length character string</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">time [ (<tt class=
+        "REPLACEABLE c5">p</tt>) ] [ without time zone
+]</tt></td>
+
+<td>&nbsp;</td>
+
+<td>time of day</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">time [ (<tt class=
+        "REPLACEABLE c5">p</tt>) ] with time zone</tt></td>
+
+<td><tt class="TYPE">timetz</tt></td>
+
+<td>time of day, including time zone</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">timestamp [ (<tt class=
+        "REPLACEABLE c5">p</tt>) ] [ without time zone
+]</tt></td>
+
+<td>&nbsp;</td>
+
+<td>date and time</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">timestamp [ (<tt class=
+        "REPLACEABLE c5">p</tt>) ] with time zone</tt></td>
+
+<td><tt class="TYPE">timestamptz</tt></td>
+
+<td>date and time, including time zone</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">tsquery</tt></td>
+
+<td>&nbsp;</td>
+
+<td>text search query</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">tsvector</tt></td>
+
+<td>&nbsp;</td>
+
+<td>text search document</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">txid_snapshot</tt></td>
+
+<td>&nbsp;</td>
+
+<td>user-level transaction ID snapshot</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">uuid</tt></td>
+
+<td>&nbsp;</td>
+
+<td>universally unique identifier</td>
+</tr>
+
+<tr>
+<td><tt class="TYPE">xml</tt></td>
+
+<td>&nbsp;</td>
+
+<td>XML data</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+TO:
+
+bigint
+bigserial
+bit
+bit
+boolean
+box
+bytea
+character
+character
+cidr
+circle
+date
+double
+inet
+integer
+interval
+line
+lseg
+macaddr
+money
+numeric
+path
+point
+polygon
+real
+smallint
+serial
+text
+time
+time
+timestamp
+timestamp
+tsquery
+tsvector
+txid_snapshot
+uuid
+xml
+
+EACH:
+ to be compared against the file: symfony_1.0.21/lib/symfony/vendor/creole/drivers/pgsql/PgSQLTypes.php
+
+int2
+int4
+oid
+int8
+cash
+money
+numeric
+float4
+float8
+bpchar
+char
+char2
+char4
+char8
+char16
+varchar
+text
+name
+filename
+bytea
+bool
+date
+time
+abstime
+timestamp
+timestamptz
+_bool
+_char
+_int2
+_int4
+_text
+_oid
+_varchar
+_int8
+_float4
+_float8
+_abstime
+_date
+_time
+_timestamp
+_numeric
+_bytea

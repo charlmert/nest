@@ -1,0 +1,38 @@
+
+
+BUG REPORTS
+       If  you  find  a bug in bash, you should report it.  But first, you should make sure that it really is a bug, and that it appears in the latest version of
+       bash.  The latest version is always available from ftp://ftp.gnu.org/pub/gnu/bash/.
+
+       Once you have determined that a bug actually exists, use the bashbug command to submit a bug report.  If you have a fix, you are encouraged to  mail  that
+       as well!  Suggestions and `philosophical' bug reports may be mailed to bug-bash@gnu.org or posted to the Usenet newsgroup gnu.bash.bug.
+
+       ALL bug reports should include:
+
+       The version number of bash
+       The hardware and operating system
+       The compiler used to compile
+       A description of the bug behaviour
+       A short script or `recipe' which exercises the bug
+
+       bashbug inserts the first three items automatically into the template it provides for filing a bug report.
+
+       Comments and bug reports concerning this manual page should be directed to chet.ramey@case.edu.
+
+BUGS
+       It's too big and too slow.
+
+       There are some subtle differences between bash and traditional versions of sh, mostly because of the POSIX specification.
+
+       Aliases are confusing in some uses.
+
+       Shell builtin commands and functions are not stoppable/restartable.
+
+       Compound  commands  and  command  sequences  of  the  form `a ; b ; c' are not handled gracefully when process suspension is attempted.  When a process is
+       stopped, the shell immediately executes the next command in the sequence.  It suffices to place the sequence of commands between parentheses to  force  it
+       into a subshell, which may be stopped as a unit.
+
+       Array variables may not (yet) be exported.
+
+       There may be only one active coprocess at a time.
+

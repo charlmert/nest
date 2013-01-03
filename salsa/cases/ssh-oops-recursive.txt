@@ -1,0 +1,9 @@
+# trying to scp a directory should be recursed automatically via scp -r
+charl@ubuntu804:~/Downloads$ scp charl@mig25:/home/charl/Downloads/git .
+Warning: Permanently added the RSA host key for IP address '10.100.0.21' to the
+list of known hosts.
+charl@mig25's password: 
+scp: /home/charl/Downloads/git: not a regular file
+charl@ubuntu804:~/Downloads$ scp -r charl@mig25:/home/charl/Downloads/git .
+charl@mig25's password: 
+git-1.7.10.tar.gz

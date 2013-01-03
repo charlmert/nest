@@ -1,0 +1,28 @@
+TODO: land the configuration spec/impl
+
+ - bash is configured as salsa instructor
+ - mysql is configured as salsa context
+ - octoplasm contains mysql config_bag
+ - salsa watches bash output to check logs pertaining to mysql
+ - options are captured and parsed into config_bag
+ - octoplasm picks up on this and reduces the command to
+ - op sql
+
+reseach> the shiny pebbles form a sort of hidden clipboard that should
+         be made available to the user before choosing to use the compressed
+         version 
+
+ 				 i.e. hubot should notify the user as "op sql" is typed
+				 with a message indicating, "About to open MYSQL client"
+
+INIT:
+mysql -uroot -ppassword localbands_db
+
+reserach> salsa notices activity in the mysql log locations and
+				  picks up on the parameters.
+          These are pushed to octoplasm after analysis and octoplasm
+          re maps the shiny command to make use of mysql and it's
+          configuration
+
+COMMAND: op sql
+charl@mig25:~/op sql

@@ -1,0 +1,18 @@
+Minimal to Non intrusive unit testing framework
+
+Take the continuedness of ci combined with the unit level to functional
+testing combined with a pin and baloon prick and you have, baloon.
+
+A unit testing framework attempting to test function from the outside with
+a set of pins known to pop or break the baloon.
+
+The non intrusive tests will be implemented purley as a set of external
+functional tests with aims to minimal system overhead and impact only
+the areas meant to test with the maximum set of exposed interface useage.
+
+This will enable system specifications to open up interfaces to possibly
+unknown, needed areas of requrired functional test spectural. i.e. open
+up and expose interfaces to the depth and resolution required for the pin
+to prick the baloon hard enough to pop
+
+Baloon, because CI is really really old

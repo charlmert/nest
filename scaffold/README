@@ -1,0 +1,32 @@
+The running name for the do once never again platform.
+
+should be cloudable infrastructure for the placement of salsa cases
+indexed and seachable according to loosley coupled critereon
+
+once a usable case is found against a match for octoplasm it should
+be executed and logged for further training exercises.
+
+Can be seen as a series of scaffolds other users can jump on to
+continue building rather than reinventing the wheel.
+
+research>	Will need to jump into design considerations of oop and
+				  other engine detail under the bonnet hiding methedologies
+
+Hence will serve as the reusable solution platform.
+Cases should be heiarchially structured e.g.
+	A case for scaffolding (parent case):
+	- network configuration for a particular set of nodes
+	  the solution can be analyzed by salsa with a network monitor
+          and system monitor as instructors.
+
+reserch> The heiarchially will possibly lend to automated taxonomy or classification.
+         when defining a name for a parent category the system should take into account
+         the meta information and other sig based info from the contents or context of
+         what is being defined.
+
+         hence hash/sig algos need to scale, these hashes will be used to group certain
+         sets of definitions and or their implementations and the hashes will only be renamed
+         to human consumable format, text, whould it be required.
+
+         for the process of naming the chef script from callcenter_deploy.sh should be named so
+         when it needs to be consumed or modified by humans.
